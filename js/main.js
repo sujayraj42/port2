@@ -4,6 +4,9 @@
  * section progress dots, performance monitoring).
  */
 
+import { injectSpeedInsights } from '@vercel/speed-insights';
+import { inject as injectAnalytics } from '@vercel/analytics';
+
 import { initLoader }       from './loader.js';
 import { initCanvas }       from './canvas-particles.js';
 import { initNav }          from './nav.js';
@@ -219,6 +222,10 @@ function initContentVisibility() {
 
 // ── Bootstrap ──
 async function bootstrap() {
+  // Initialize Vercel Insights & Analytics
+  injectSpeedInsights();
+  injectAnalytics();
+
   // Apply content-visibility early for performance
   initContentVisibility();
 
