@@ -1,0 +1,155 @@
+@layer animations {
+  @property --gradient-rotation {
+    syntax: '<angle>'; inherits: false; initial-value: 0deg;
+  }
+  @property --fill-pct {
+    syntax: '<percentage>'; inherits: false; initial-value: 0%;
+  }
+  @property --shimmer-pos {
+    syntax: '<percentage>'; inherits: false; initial-value: -200%;
+  }
+
+  @keyframes clip-reveal-x {
+    from { clip-path: inset(0 100% 0 0); }
+    to   { clip-path: inset(0 0% 0 0); }
+  }
+
+  @keyframes clip-reveal-y {
+    from { clip-path: inset(100% 0 0 0); }
+    to   { clip-path: inset(0% 0 0 0); }
+  }
+
+  @keyframes fade-rise {
+    from { opacity: 0; transform: translateY(32px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @keyframes slide-left {
+    from { opacity: 0; transform: translateX(-48px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes slide-right {
+    from { opacity: 0; transform: translateX(48px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes float-y {
+    0%, 100% { transform: translateY(0px); }
+    50%      { transform: translateY(-12px); }
+  }
+
+  @keyframes float-orb-1 {
+    0%, 100% { transform: translate(0,0); }
+    33%      { transform: translate(40px,-30px); }
+    66%      { transform: translate(-30px,20px); }
+  }
+
+  @keyframes float-orb-2 {
+    0%, 100% { transform: translate(0,0); }
+    50%      { transform: translate(-50px,-40px); }
+  }
+
+  @keyframes float-orb-3 {
+    0%, 100% { transform: translate(0,0); }
+    40%      { transform: translate(30px,40px); }
+    80%      { transform: translate(-20px,-30px); }
+  }
+
+  @keyframes spin-gradient {
+    to { --gradient-rotation: 360deg; }
+  }
+
+  @keyframes pulse-ring {
+    0%   { transform: scale(1);   opacity: 1; }
+    100% { transform: scale(2.2); opacity: 0; }
+  }
+
+  @keyframes bounce-scroll {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50%      { transform: translateY(10px); opacity: 0.6; }
+  }
+
+  @keyframes typed-cursor-blink {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0; }
+  }
+
+  @keyframes nav-enter {
+    from { transform: translateY(-100%); }
+    to   { transform: translateY(0); }
+  }
+
+  @keyframes draw-svg-stroke {
+    from { stroke-dashoffset: var(--path-length, 1000); }
+    to   { stroke-dashoffset: 0; }
+  }
+
+  @keyframes loader-fill {
+    from { width: 0%; }
+    to   { width: 100%; }
+  }
+
+  @keyframes status-pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50%      { transform: scale(1.4); opacity: 0.5; }
+  }
+
+  @keyframes shimmer-pass {
+    from { --shimmer-pos: -200%; }
+    to   { --shimmer-pos: 200%; }
+  }
+
+  @keyframes grow-width {
+    from { width: 0%; }
+    to   { width: 100%; }
+  }
+
+  @keyframes section-num-parallax {
+    from { transform: translateY(-40px); }
+    to   { transform: translateY(40px); }
+  }
+
+  @keyframes draw-line {
+    from { transform: scaleY(0); }
+    to   { transform: scaleY(1); }
+  }
+
+  /* Scroll-Driven Animations */
+  @supports (animation-timeline: scroll()) {
+    #reading-progress {
+      animation: grow-width linear both;
+      animation-timeline: scroll(root block);
+    }
+    .section-bg-number {
+      animation: section-num-parallax linear both;
+      animation-timeline: view();
+      animation-range: entry -20% exit 120%;
+    }
+    #timeline-line {
+      animation: draw-line linear both;
+      animation-timeline: view();
+      animation-range: entry 5% exit 85%;
+      transform-origin: top center;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      animation-delay: 0ms !important;
+    }
+    [data-reveal], [data-reveal-left], [data-reveal-right] {
+      opacity: 1 !important;
+      transform: none !important;
+      filter: none !important;
+    }
+  }
+}

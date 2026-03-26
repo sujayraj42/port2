@@ -1,0 +1,194 @@
+@layer sections {
+  #education {
+    background:
+      var(--noise-bg),
+      var(--leather-texture),
+      linear-gradient(180deg, var(--obsidian) 0%, var(--void) 100%);
+  }
+
+  .timeline-wrapper {
+    position: relative;
+    padding-left: var(--space-12);
+    z-index: 1;
+  }
+
+  /* Vertical line — embossed groove */
+  #timeline-line {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background:
+      linear-gradient(180deg, var(--accent-dim), var(--accent), var(--accent-dim));
+    transform-origin: top center;
+    z-index: 0;
+    box-shadow:
+      -1px 0 0 rgba(0,0,0,0.3),
+      1px 0 0 rgba(255,255,255,0.05),
+      0 0 8px rgba(200,146,58,0.1);
+    border-radius: 2px;
+  }
+
+  /* Node dots — metallic rivets */
+  .timeline-node {
+    position: absolute;
+    left: -32px;
+    top: var(--space-8);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 35% 35%, var(--accent-light), var(--accent), var(--accent-dim));
+    border: 2px solid var(--obsidian);
+    z-index: 2;
+    box-shadow:
+      0 0 0 2px rgba(200,146,58,0.2),
+      0 2px 4px rgba(0,0,0,0.4),
+      inset 0 -2px 2px rgba(0,0,0,0.2);
+    transition: transform var(--dur-base) var(--ease-bounce);
+  }
+
+  .timeline-node::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    opacity: 0;
+    transition: opacity var(--dur-base);
+  }
+
+  .edu-card:hover .timeline-node::after {
+    opacity: 0.4;
+    animation: pulse-ring 1.5s ease-out infinite;
+  }
+
+  .edu-card:hover .timeline-node { transform: scale(1.2); }
+
+  .edu-card { position: relative; margin-bottom: var(--space-8); }
+
+  .edu-body {
+    background:
+      var(--leather-texture),
+      linear-gradient(180deg, var(--surface-raise) 0%, var(--surface) 100%);
+    border: 1px solid var(--border-groove);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6) var(--space-8);
+    box-shadow: var(--shadow-card);
+    transition:
+      transform var(--dur-base) var(--ease-out-expo),
+      box-shadow var(--dur-base);
+    position: relative;
+  }
+
+  .edu-body::before {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1px dashed rgba(200,146,58,0.08);
+    border-radius: calc(var(--radius-lg) - 3px);
+    pointer-events: none;
+  }
+
+  .edu-card:hover .edu-body {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-deep);
+  }
+
+  /* Status badges — raised pill */
+  .edu-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1) var(--space-4);
+    font-size: var(--text-2xs);
+    font-family: var(--font-mono);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-3);
+  }
+
+  .edu-status-badge.in-progress {
+    background: linear-gradient(180deg, #2a5e3e 0%, #1e4a30 100%);
+    border: 1px solid rgba(0,0,0,0.3);
+    color: #a0e0b8;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.1),
+      0 1px 3px rgba(0,0,0,0.2);
+    text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  }
+
+  .edu-status-badge.in-progress::before {
+    content: '';
+    width: 7px; height: 7px; border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #6df090, #2e8b57);
+    box-shadow: 0 0 4px rgba(67,233,123,0.5);
+    animation: status-pulse 2s ease-in-out infinite;
+  }
+
+  .edu-grade-badge {
+    display: inline-block;
+    padding: var(--space-1) var(--space-4);
+    font-size: var(--text-2xs);
+    font-family: var(--font-mono);
+    background: linear-gradient(180deg, #4a3a20 0%, #3a2c18 100%);
+    border: 1px solid rgba(0,0,0,0.3);
+    color: var(--accent-light);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-3);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.08),
+      0 1px 3px rgba(0,0,0,0.2);
+    text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  }
+
+  .edu-class-badge {
+    display: inline-block;
+    padding: var(--space-1) var(--space-4);
+    font-size: var(--text-2xs);
+    font-family: var(--font-mono);
+    background: linear-gradient(180deg, #5a4020 0%, #4a3418 100%);
+    border: 1px solid rgba(0,0,0,0.3);
+    color: #e8c892;
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-3);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.08),
+      0 1px 3px rgba(0,0,0,0.2);
+    text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  }
+
+  .edu-body h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
+  .edu-institution { font-size: var(--text-sm); color: var(--text-secondary); margin-bottom: var(--space-1); }
+
+  .edu-institution a {
+    color: var(--accent-light);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color var(--dur-base);
+  }
+
+  .edu-institution a:hover { color: var(--accent); }
+
+  .edu-field, .edu-period, .edu-location, .edu-grade {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    margin-bottom: var(--space-1);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+  }
+
+  .edu-update-note {
+    font-size: var(--text-xs);
+    color: #e8c892;
+    font-family: var(--font-mono);
+    margin-top: var(--space-3);
+    padding: var(--space-2) var(--space-3);
+    background:
+      linear-gradient(180deg, #4a3820 0%, #3a2c18 100%);
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: var(--radius-xs);
+    box-shadow: var(--shadow-inset);
+    text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  }
+}

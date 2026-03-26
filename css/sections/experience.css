@@ -1,0 +1,154 @@
+@layer sections {
+  #experience {
+    background:
+      var(--noise-bg),
+      linear-gradient(180deg, var(--void) 0%, var(--obsidian) 100%);
+  }
+
+  .experience-content { position: relative; z-index: 1; }
+
+  .events-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
+  .event-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: center;
+  }
+
+  .event-card:nth-child(even) { direction: rtl; }
+  .event-card:nth-child(even) > * { direction: ltr; }
+
+  .event-visual {
+    height: 200px;
+    border-radius: var(--radius-lg);
+    background: var(--event-color, var(--accent));
+    opacity: 0.12;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-inset);
+    border: 1px solid var(--border-groove);
+  }
+
+  .event-visual::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at center, transparent 30%, var(--void) 100%);
+  }
+
+  .event-body {
+    background:
+      var(--leather-texture),
+      linear-gradient(180deg, var(--surface-raise) 0%, var(--surface) 100%);
+    border: 1px solid var(--border-groove);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6) var(--space-8);
+    box-shadow: var(--shadow-card);
+    transition:
+      transform var(--dur-base) var(--ease-out-expo),
+      box-shadow var(--dur-base);
+    position: relative;
+  }
+
+  .event-body::before {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1px dashed rgba(200,146,58,0.08);
+    border-radius: calc(var(--radius-lg) - 3px);
+    pointer-events: none;
+  }
+
+  .event-body:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-deep);
+  }
+
+  .event-role-badge {
+    display: inline-block;
+    padding: var(--space-1) var(--space-4);
+    font-size: var(--text-2xs);
+    font-family: var(--font-mono);
+    font-weight: 600;
+    color: white;
+    background:
+      linear-gradient(180deg,
+        color-mix(in srgb, var(--event-color, var(--accent)) 100%, white 20%),
+        var(--event-color, var(--accent))
+      );
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-3);
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.2),
+      0 1px 3px rgba(0,0,0,0.25);
+    text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  }
+
+  .event-body h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
+
+  .event-org {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    margin-bottom: var(--space-4);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+  }
+
+  .event-scale {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--text-2xs);
+    font-family: var(--font-mono);
+    color: #a0e0b8;
+    background:
+      linear-gradient(180deg, #2a5e3e 0%, #1e4a30 100%);
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-4);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.1),
+      0 1px 3px rgba(0,0,0,0.2);
+    text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  }
+
+  .event-responsibilities {
+    display: flex; flex-direction: column; gap: var(--space-2);
+    margin-bottom: var(--space-4);
+  }
+
+  .event-responsibilities li {
+    font-size: var(--text-xs);
+    color: var(--text-secondary);
+    padding-left: var(--space-4);
+    position: relative;
+  }
+
+  .event-responsibilities li::before {
+    content: '›';
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .event-reactions {
+    font-size: var(--text-2xs);
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+  }
+
+  .event-speakers {
+    font-size: var(--text-xs);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-3);
+    line-height: 1.6;
+  }
+
+  .event-speakers strong { color: var(--text-primary); font-weight: 500; }
+}

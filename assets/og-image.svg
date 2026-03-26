@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#0A0A14"/>
+  <rect x="40" y="40" width="1120" height="550" rx="20" stroke="#6C63FF" stroke-width="2" fill="none" opacity="0.3"/>
+  <text x="600" y="260" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="800" font-size="72" fill="#F0EFF8">SUJAY CHAKRAVARTI</text>
+  <text x="600" y="340" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="400" font-size="32" fill="#6C63FF">Frontend Developer</text>
+  <text x="600" y="400" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="300" font-size="24" fill="#A8A8C0">Building Responsive Web Applications | JavaScript • Bootstrap</text>
+  <line x1="480" y1="290" x2="720" y2="290" stroke="#6C63FF" stroke-width="2" opacity="0.5"/>
+</svg>

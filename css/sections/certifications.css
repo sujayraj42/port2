@@ -1,0 +1,134 @@
+@layer sections {
+  #certifications {
+    background:
+      var(--noise-bg),
+      linear-gradient(180deg, var(--void) 0%, var(--obsidian) 100%);
+  }
+
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Certificate card — embossed leather frame with gold edge */
+  .cert-card {
+    position: relative;
+    background:
+      var(--leather-texture),
+      linear-gradient(180deg, var(--surface-raise) 0%, var(--surface) 100%);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    overflow: hidden;
+    z-index: 0;
+    border: 2px solid var(--border-groove);
+    box-shadow: var(--shadow-card);
+    transition: transform var(--dur-base) var(--ease-out-expo),
+                box-shadow var(--dur-base);
+  }
+
+  /* Gold corner accents */
+  .cert-card::before {
+    content: '';
+    position: absolute;
+    top: 8px; left: 8px; right: 8px; bottom: 8px;
+    border: 1px solid rgba(200,146,58,0.12);
+    border-radius: calc(var(--radius-lg) - 6px);
+    pointer-events: none;
+  }
+
+  /* Top-left corner accent */
+  .cert-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 40px; height: 40px;
+    background:
+      linear-gradient(135deg, rgba(200,146,58,0.15) 0%, transparent 60%);
+    pointer-events: none;
+    border-radius: var(--radius-lg) 0 0 0;
+  }
+
+  .cert-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-deep);
+  }
+
+  .cert-issuer-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-1) var(--space-4);
+    font-size: var(--text-2xs);
+    font-family: var(--font-mono);
+    font-weight: 600;
+    color: white;
+    background:
+      linear-gradient(180deg,
+        color-mix(in srgb, var(--issuer-color, var(--accent)) 100%, white 20%),
+        var(--issuer-color, var(--accent))
+      );
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-4);
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.2),
+      0 1px 3px rgba(0,0,0,0.25);
+    text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  }
+
+  .cert-body h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
+  .cert-platform { font-size: var(--text-xs); color: var(--text-muted); margin-bottom: var(--space-1); }
+  .cert-date { font-size: var(--text-xs); color: var(--text-muted); margin-bottom: var(--space-4); }
+
+  /* Credential ID — terminal screen style */
+  .cert-id-wrapper {
+    background: #0a0e0a;
+    border: 2px solid rgba(0,0,0,0.5);
+    border-radius: var(--radius-sm);
+    padding: var(--space-3) var(--space-4);
+    margin-bottom: var(--space-4);
+    box-shadow:
+      var(--shadow-inset),
+      0 0 12px rgba(0,0,0,0.3) inset;
+    position: relative;
+  }
+
+  /* Screen reflection */
+  .cert-id-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 2px; left: 10%; right: 10%;
+    height: 30%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .cert-id-label {
+    display: block;
+    font-size: var(--text-2xs);
+    color: #4a6a4a;
+    font-family: var(--font-mono);
+    margin-bottom: var(--space-1);
+  }
+
+  .cert-id {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: #4ae04a;
+    letter-spacing: 1px;
+    text-shadow: 0 0 6px rgba(74,224,74,0.3);
+  }
+
+  .cert-id-cursor {
+    display: inline-block;
+    animation: typed-cursor-blink 0.5s infinite;
+    color: #4ae04a;
+  }
+
+  .cert-skills {
+    display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-6);
+  }
+}

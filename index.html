@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Sujay Chakravarti — Full Stack Developer | Portfolio</title>
+  <meta name="description" content="Sujay Chakravarti — Full Stack Developer and BCA student at Lovely Professional University. Building responsive web apps with HTML, CSS, JavaScript, Bootstrap 5 and Tailwind CSS.">
+  <link rel="canonical" href="https://sujayraj42.github.io/personal-PORTFOLIO/">
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Sujay Chakravarti — Full Stack Developer">
+  <meta property="og:description" content="BCA student at LPU. Full Stack Developer open to internships.">
+  <meta property="og:image"       content="./assets/og-image.svg">
+  <meta property="og:url"         content="https://sujayraj42.github.io/personal-PORTFOLIO/">
+  <meta property="og:type"        content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Sujay Chakravarti — Full Stack Developer">
+  <meta name="twitter:description" content="Building end-to-end web applications | JavaScript • Bootstrap • Tailwind">
+  <meta name="twitter:image"       content="./assets/og-image.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://api.fontshare.com">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@700,800&f[]=satoshi@300,400,500&display=swap" rel="stylesheet">
+
+  <!-- CSS (order matches @layer order) -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/cursor.css">
+  <link rel="stylesheet" href="css/scrollbar.css">
+  <link rel="stylesheet" href="css/sections/loader.css">
+  <link rel="stylesheet" href="css/sections/nav.css">
+  <link rel="stylesheet" href="css/sections/hero.css">
+  <link rel="stylesheet" href="css/sections/about.css">
+  <link rel="stylesheet" href="css/sections/skills.css">
+  <link rel="stylesheet" href="css/sections/projects.css">
+  <link rel="stylesheet" href="css/sections/certifications.css">
+  <link rel="stylesheet" href="css/sections/education.css">
+  <link rel="stylesheet" href="css/sections/experience.css">
+  <link rel="stylesheet" href="css/sections/contact.css">
+  <link rel="stylesheet" href="css/sections/footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/features.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sujay Chakravarti",
+    "jobTitle": "Full Stack Developer",
+    "description": "BCA student building full-stack web applications with JavaScript, Bootstrap, and Tailwind CSS",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Lovely Professional University"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/sujay-2oo5/",
+      "https://github.com/sujayraj42"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Jalandhar",
+      "addressRegion": "Punjab",
+      "addressCountry": "IN"
+    }
+  }
+  </script>
+</head>
+<body data-theme="dark">
+
+  <!-- Skip navigation -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ① Loading Screen -->
+  <div id="loader" aria-hidden="true" aria-label="Loading">
+    <svg id="loader-logo" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M25 60 C15 60, 10 50, 10 40 C10 25, 20 15, 35 15 L45 15" stroke="#6C63FF" stroke-width="3" stroke-linecap="round" fill="none" style="--path-length: 150; stroke-dasharray: 150; stroke-dashoffset: 150; animation: draw-svg-stroke 1.2s ease-in-out forwards;" />
+      <path d="M55 20 C65 20, 70 30, 70 40 C70 55, 60 65, 45 65 L35 65" stroke="#6C63FF" stroke-width="3" stroke-linecap="round" fill="none" style="--path-length: 150; stroke-dasharray: 150; stroke-dashoffset: 150; animation: draw-svg-stroke 1.2s ease-in-out 0.3s forwards;" />
+    </svg>
+    <div id="loader-bar"><div id="loader-fill"></div></div>
+  </div>
+
+  <!-- ② Navigation -->
+  <header>
+    <nav id="navbar" aria-label="Main navigation">
+      <a href="#hero" class="nav-logo" aria-label="Sujay Chakravarti — Home" data-hover-cursor>SC</a>
+      <div class="nav-status">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>Open to Work</span>
+      </div>
+      <ul class="nav-links" role="list">
+        <li><a href="#about"          data-nav="about"          data-hover-cursor>About</a></li>
+        <li><a href="#skills"         data-nav="skills"         data-hover-cursor>Skills</a></li>
+        <li><a href="#projects"       data-nav="projects"       data-hover-cursor>Projects</a></li>
+        <li><a href="#certifications" data-nav="certifications" data-hover-cursor>Certifications</a></li>
+        <li><a href="#education"      data-nav="education"      data-hover-cursor>Education</a></li>
+        <li><a href="#contact"        data-nav="contact"        data-hover-cursor>Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="theme-toggle" aria-label="Toggle theme" data-hover-cursor>☀</button>
+        <button id="sound-toggle" aria-label="Toggle ambient sound" data-hover-cursor>♪</button>
+        <button id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div id="reading-progress" aria-hidden="true"></div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" aria-hidden="true">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- ③ Main Content -->
+  <main id="main">
+
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section id="hero" aria-label="Introduction">
+      <canvas id="hero-canvas" role="presentation" aria-hidden="true"></canvas>
+      <div class="hero-bg-orbs" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+      </div>
+      <div class="hero-grid-overlay" aria-hidden="true"></div>
+      <div class="hero-content">
+        <div class="hero-name" aria-label="Sujay Chakravarti">
+          <span class="hero-name-word" data-word="SUJAY"></span>
+          <span class="hero-name-word" data-word="CHAKRAVARTI"></span>
+        </div>
+        <div class="hero-rule" aria-hidden="true"></div>
+        <p class="hero-typed-wrapper">
+          <span id="hero-typed" aria-live="polite"></span>
+          <span class="typed-cursor" aria-hidden="true">|</span>
+        </p>
+        <p class="hero-sub">BCA Student @ LPU · Jalandhar, India</p>
+        <div class="hero-badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          Available for Internships & Junior Roles
+        </div>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary" data-magnetic data-hover-cursor>
+            View My Work ↓
+          </a>
+          <a href="https://www.linkedin.com/in/sujay-2oo5/"
+             target="_blank" rel="noopener noreferrer"
+             class="btn btn-ghost" data-magnetic data-hover-cursor>
+            Connect on LinkedIn ↗
+          </a>
+        </div>
+        <div class="hero-scroll-indicator" aria-hidden="true">
+          <div class="scroll-chevron"></div>
+          <span>scroll to explore</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ ABOUT ═══════════════ -->
+    <section id="about" aria-label="About Me">
+      <span class="section-bg-number" aria-hidden="true">01</span>
+      <div class="container">
+        <p class="section-subtitle">Who I Am</p>
+        <h2 class="section-heading">About Me</h2>
+        <div class="about-grid">
+          <div class="about-left">
+            <div class="about-initial" aria-hidden="true">S</div>
+            <div class="stats-grid">
+              <div class="stat-card" data-reveal>
+                <div class="stat-number" data-count-to="500" data-count-suffix="+">0</div>
+                <div class="stat-label">Connections</div>
+              </div>
+              <div class="stat-card" data-reveal>
+                <div class="stat-number" data-count-to="2195" data-count-suffix="">0</div>
+                <div class="stat-label">Followers</div>
+              </div>
+              <div class="stat-card" data-reveal>
+                <div class="stat-number" data-count-to="4" data-count-suffix="">0</div>
+                <div class="stat-label">Events Led</div>
+              </div>
+              <div class="stat-card" data-reveal>
+                <div class="stat-number" data-count-to="20000" data-count-suffix="+">0</div>
+                <div class="stat-label">Attendees</div>
+              </div>
+            </div>
+          </div>
+          <div class="about-right" data-reveal>
+            <p class="about-bio">
+              I am a final year BCA (Bachelor of Computer Applications) student at Lovely Professional University. My journey in tech started with curiosity about how websites work, which evolved into a passion for Full Stack Development — building complete products from the ground up. Currently, I focus on building responsive, full-stack web applications, exploring both frontend craftsmanship and backend fundamentals. I enjoy solving real problems and turning complex requirements into clean, functional digital experiences. Beyond code, I have managed live events for 20,000+ attendees at national-level conclaves — proving I can lead, coordinate, and deliver under pressure.
+            </p>
+            <div class="about-info-row">
+              <div class="badge badge-status">
+                <span class="badge-dot" aria-hidden="true"></span>
+                Open to Work — Full Stack / Frontend Roles
+              </div>
+              <div class="about-location">
+                <span class="pin" aria-hidden="true">📍</span>
+                Jalandhar, Punjab, India
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ SKILLS ═══════════════ -->
+    <section id="skills" aria-label="Skills">
+      <span class="section-bg-number" aria-hidden="true">02</span>
+      <div class="container">
+        <p class="section-subtitle">My Arsenal</p>
+        <h2 class="section-heading">What I Build With</h2>
+        <div class="skills-content">
+          <div class="skills-grid">
+
+            <!-- ┌─ PANEL 1: Tech Proficiency ─┐ -->
+            <div class="skill-panel" data-reveal>
+              <div class="skill-panel-header">
+                <div class="skill-panel-icon">⚡</div>
+                <div class="skill-panel-title-wrap">
+                  <div class="skill-panel-title">Tech Proficiency</div>
+                  <div class="skill-panel-subtitle">Core languages &amp; frameworks</div>
+                </div>
+              </div>
+              <div class="progress-row">
+                <div class="progress-item">
+                  <div class="progress-header">
+                    <span class="progress-name">HTML5</span>
+                    <span class="progress-pct">0%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" data-progress="92"></div>
+                  </div>
+                </div>
+                <div class="progress-item">
+                  <div class="progress-header">
+                    <span class="progress-name">CSS3</span>
+                    <span class="progress-pct">0%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" data-progress="88"></div>
+                  </div>
+                </div>
+                <div class="progress-item">
+                  <div class="progress-header">
+                    <span class="progress-name">JavaScript (ES6+)</span>
+                    <span class="progress-pct">0%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" data-progress="78"></div>
+                  </div>
+                </div>
+                <div class="progress-item">
+                  <div class="progress-header">
+                    <span class="progress-name">Bootstrap 5</span>
+                    <span class="progress-pct">0%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" data-progress="82" data-color="blue"></div>
+                  </div>
+                </div>
+                <div class="progress-item">
+                  <div class="progress-header">
+                    <span class="progress-name">Tailwind CSS</span>
+                    <span class="progress-pct">0%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" data-progress="70" data-color="blue"></div>
+                  </div>
+                </div>
+                <div class="progress-item">
+                  <div class="progress-header">
+                    <span class="progress-name">C Programming</span>
+                    <span class="progress-pct">0%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" data-progress="65" data-color="emerald"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ┌─ PANEL 2: Frameworks + Backend ─┐ -->
+            <div class="skill-panel" data-reveal>
+              <div class="skill-panel-header">
+                <div class="skill-panel-icon">📦</div>
+                <div class="skill-panel-title-wrap">
+                  <div class="skill-panel-title">Frameworks</div>
+                  <div class="skill-panel-subtitle">Libraries &amp; UI kits</div>
+                </div>
+              </div>
+              <div class="badge-grid">
+                <span class="tech-badge" style="--i:0">Bootstrap 5</span>
+                <span class="tech-badge" style="--i:1">Tailwind CSS</span>
+                <span class="tech-badge" style="--i:2">Ionic Framework</span>
+                <span class="tech-badge" style="--i:3">Responsive Design</span>
+              </div>
+
+              <div class="skill-panel-header" style="margin-top: var(--space-8);">
+                <div class="skill-panel-icon">🔧</div>
+                <div class="skill-panel-title-wrap">
+                  <div class="skill-panel-title">Backend &amp; Languages</div>
+                  <div class="skill-panel-subtitle">Server-side &amp; programming</div>
+                </div>
+              </div>
+              <div class="badge-grid">
+                <span class="tech-badge" style="--i:0">C Programming</span>
+                <span class="tech-badge" style="--i:1">Python (Basic)</span>
+                <span class="tech-badge" style="--i:2">Node.js (Basic)</span>
+                <span class="tech-badge" style="--i:3">REST APIs</span>
+                <span class="tech-badge" style="--i:4">MySQL (Basic)</span>
+              </div>
+            </div>
+
+            <!-- ┌─ PANEL 3: Tools & Dev Ecosystem ─┐ -->
+            <div class="skill-panel" data-reveal>
+              <div class="skill-panel-header">
+                <div class="skill-panel-icon">🛠</div>
+                <div class="skill-panel-title-wrap">
+                  <div class="skill-panel-title">Tools &amp; Ecosystem</div>
+                  <div class="skill-panel-subtitle">Development workflow</div>
+                </div>
+              </div>
+              <div class="badge-grid">
+                <span class="tech-badge" style="--i:0">Git &amp; GitHub</span>
+                <span class="tech-badge" style="--i:1">VS Code</span>
+                <span class="tech-badge" style="--i:2">Chrome DevTools</span>
+                <span class="tech-badge" style="--i:3">Google Maps API</span>
+                <span class="tech-badge" style="--i:4">Figma (Basic)</span>
+                <span class="tech-badge" style="--i:5">npm</span>
+                <span class="tech-badge" style="--i:6">Netlify</span>
+                <span class="tech-badge" style="--i:7">GitHub Pages</span>
+              </div>
+            </div>
+
+            <!-- ┌─ PANEL 4: Interpersonal Strengths (full width) ─┐ -->
+            <div class="skill-panel skill-panel--full" data-reveal>
+              <div class="skill-panel-header">
+                <div class="skill-panel-icon">🌟</div>
+                <div class="skill-panel-title-wrap">
+                  <div class="skill-panel-title">Interpersonal Strengths</div>
+                  <div class="skill-panel-subtitle">Leadership, communication &amp; problem solving</div>
+                </div>
+              </div>
+              <div class="soft-skills-grid">
+                <div class="soft-skill-group">
+                  <div class="soft-group-label">Team &amp; Leadership</div>
+                  <div class="soft-group-tags">
+                    <span class="soft-badge" style="--i:0">Volunteer Management</span>
+                    <span class="soft-badge" style="--i:1">Public Speaking</span>
+                    <span class="soft-badge" style="--i:2">Team Collaboration</span>
+                    <span class="soft-badge" style="--i:3">Stage Management</span>
+                    <span class="soft-badge" style="--i:4">Mentoring</span>
+                  </div>
+                </div>
+                <div class="soft-skill-group">
+                  <div class="soft-group-label">Communication</div>
+                  <div class="soft-group-tags">
+                    <span class="soft-badge interpersonal-badge" style="--i:0">Customer Support</span>
+                    <span class="soft-badge interpersonal-badge" style="--i:1">Documentation</span>
+                    <span class="soft-badge interpersonal-badge" style="--i:2">Active Listening</span>
+                    <span class="soft-badge interpersonal-badge" style="--i:3">Event Coordination</span>
+                    <span class="soft-badge interpersonal-badge" style="--i:4">Stakeholder Communication</span>
+                  </div>
+                </div>
+                <div class="soft-skill-group">
+                  <div class="soft-group-label">Problem Solving</div>
+                  <div class="soft-group-tags">
+                    <span class="soft-badge problem-badge" style="--i:0">Adaptability</span>
+                    <span class="soft-badge problem-badge" style="--i:1">Critical Thinking</span>
+                    <span class="soft-badge problem-badge" style="--i:2">Time Management</span>
+                    <span class="soft-badge problem-badge" style="--i:3">Analytical Thinking</span>
+                    <span class="soft-badge problem-badge" style="--i:4">Resourcefulness</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ PROJECTS ═══════════════ -->
+    <section id="projects" aria-label="Projects">
+      <span class="section-bg-number" aria-hidden="true">03</span>
+      <div class="container">
+        <p class="section-subtitle">Selected Work</p>
+        <h2 class="section-heading">Projects</h2>
+        <div class="projects-grid">
+
+          <!-- Varanasi -->
+          <article class="project-card" data-tilt data-reveal>
+            <div class="card-visual" style="--card-gradient: linear-gradient(135deg, #8B1A00 0%, #CC4400 25%, #FF6B00 50%, #FFB830 75%, #FFD700 100%)"></div>
+            <div class="card-body">
+              <div class="card-meta">BCA Semester Project</div>
+              <h3 class="card-title">Explore Varanasi — The Spiritual Capital</h3>
+              <p class="card-tagline">A cultural tourism website highlighting the spiritual significance and beautiful ghats of Varanasi.</p>
+              <p class="card-desc">Semester-long web project built with Bootstrap 5. Features photo gallery with lightbox, tourist attractions (Kashi Vishwanath Temple, Sarnath), Google Maps API integration, and contact form.</p>
+              <ul class="card-features">
+                <li>Home Page with visual design</li>
+                <li>Photo Gallery with Lightbox</li>
+                <li>Tourist Attractions — Kashi Vishwanath, Sarnath</li>
+                <li>Google Maps API Integration</li>
+                <li>Contact form with social links</li>
+              </ul>
+              <div class="card-tech">
+                <span class="tech-badge">Bootstrap 5</span>
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">Google Maps API</span>
+              </div>
+              <div class="card-links">
+                <a href="#" id="proj-varanasi-live" target="_blank" rel="noopener noreferrer"
+                   class="btn btn-sm btn-primary" data-hover-cursor>
+                  Live Demo ↗
+                </a>
+                <a href="https://github.com/sujayraj42" target="_blank" rel="noopener noreferrer"
+                   class="btn btn-sm btn-ghost" data-hover-cursor>
+                  GitHub ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- OAKWood -->
+          <article class="project-card" data-tilt data-reveal>
+            <div class="card-visual" style="--card-gradient: linear-gradient(135deg, #3D1F0A 0%, #8B4513 30%, #D2691E 60%, #DEB887 100%)"></div>
+            <div class="card-body">
+              <div class="card-meta">Jan 2024 – Feb 2024 · LPU Assignment</div>
+              <h3 class="card-title">OAKWood's Furniture Website</h3>
+              <p class="card-tagline">A sleek, modern furniture catalog and e-commerce UI concept with a focus on high-quality visuals.</p>
+              <p class="card-desc">BCA Bachelor's assignment demonstrating front-end skills. Interactive online furniture store with product showcases, responsive layout, and CSS animations. OAK Wood's makes your Comfort and Happiness!</p>
+              <ul class="card-features">
+                <li>Interactive product showcase</li>
+                <li>Responsive grid layout</li>
+                <li>CSS animations on hover</li>
+                <li>Mobile-first design</li>
+              </ul>
+              <div class="card-tech">
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">Responsive Design</span>
+              </div>
+              <div class="card-links">
+                <a href="#" id="proj-oakwood-live" target="_blank" rel="noopener noreferrer"
+                   class="btn btn-sm btn-primary" data-hover-cursor>
+                  Live Demo ↗
+                </a>
+                <a href="https://github.com/sujayraj42" target="_blank" rel="noopener noreferrer"
+                   class="btn btn-sm btn-ghost" data-hover-cursor>
+                  GitHub ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Personal Portfolio -->
+          <article class="project-card" data-tilt data-reveal>
+            <div class="card-visual" style="--card-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #e94560 100%)"></div>
+            <div class="card-body">
+              <div class="card-meta">2026 &middot; Personal Project</div>
+              <h3 class="card-title">Personal Portfolio Website</h3>
+              <p class="card-tagline">A premium, dark-themed portfolio with skeuomorphic UI, particle animations, and modern web platform APIs.</p>
+              <p class="card-desc">This portfolio itself &mdash; built from scratch with zero frameworks. Features OffscreenCanvas particle system, Scroll-Driven Animations, View Transitions API, custom 3-layer cursor, and Popover API. Showcases advanced CSS and vanilla JavaScript mastery.</p>
+              <ul class="card-features">
+                <li>Particle system (OffscreenCanvas + Web Worker)</li>
+                <li>Kinetic typography &amp; typewriter effect</li>
+                <li>Skeuomorphic dark theme with leather textures</li>
+                <li>Scroll-driven reveal animations</li>
+                <li>100% vanilla &mdash; zero dependencies</li>
+              </ul>
+              <div class="card-tech">
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">JavaScript ES2025+</span>
+                <span class="tech-badge">Web Workers</span>
+                <span class="tech-badge">Canvas API</span>
+              </div>
+              <div class="card-links">
+                <a href="#hero" class="btn btn-sm btn-primary" data-hover-cursor>
+                  You're Here ↗
+                </a>
+                <a href="https://github.com/sujayraj42" target="_blank" rel="noopener noreferrer"
+                   class="btn btn-sm btn-ghost" data-hover-cursor>
+                  GitHub ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- MediCare App -->
+          <article class="project-card" data-tilt data-reveal>
+            <div class="card-visual" style="--card-gradient: linear-gradient(135deg, #0d4f3c 0%, #10805a 30%, #16a34a 60%, #86efac 100%)"></div>
+            <div class="card-body">
+              <div class="card-meta">2026 &middot; Academic Project</div>
+              <h3 class="card-title">MediCare &mdash; Healthcare App</h3>
+              <p class="card-tagline">A cross-platform healthcare framework with appointment booking, patient reports, and profile management.</p>
+              <p class="card-desc">Ionic-based healthcare application featuring multi-page architecture with registration, dashboard, appointments, medical reports, and user profile. Built with a focus on clean component structure and accessible UI patterns.</p>
+              <ul class="card-features">
+                <li>Multi-page Ionic application</li>
+                <li>Appointment booking system</li>
+                <li>Patient reports &amp; records</li>
+                <li>Responsive cross-platform design</li>
+              </ul>
+              <div class="card-tech">
+                <span class="tech-badge">Ionic</span>
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">Angular (Basic)</span>
+              </div>
+              <div class="card-links">
+                <a href="#" id="proj-medicare-live" target="_blank" rel="noopener noreferrer"
+                   class="btn btn-sm btn-primary" data-hover-cursor>
+                  Live Demo ↗
+                </a>
+                <a href="https://github.com/sujayraj42" target="_blank" rel="noopener noreferrer"
+                   class="btn btn-sm btn-ghost" data-hover-cursor>
+                  GitHub ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Leadership Project — Events -->
+          <article class="project-card" data-tilt data-reveal>
+            <div class="card-visual" style="--card-gradient: linear-gradient(135deg, #2d1b69 0%, #5b34a5 25%, #7c3aed 50%, #a78bfa 75%, #ddd6fe 100%)"></div>
+            <div class="card-body">
+              <div class="card-meta">2024 &ndash; 2025 &middot; Leadership &amp; Event Management</div>
+              <h3 class="card-title">National Event Stage Management</h3>
+              <p class="card-tagline">Led stage operations for 4 national-level events with 20,000+ combined attendees at LPU.</p>
+              <p class="card-desc">Managed end-to-end stage operations across major university events including Chhatra Sansad India Conclave, International Women's Day, Youth Talk ft. Gaurav Taneja, and Gita Olympiad. Coordinated 50+ volunteers, VIP management, and live production logistics.</p>
+              <ul class="card-features">
+                <li>20,000+ attendees across 4 events</li>
+                <li>VIP speaker coordination (ISRO Chairman, Smriti Irani)</li>
+                <li>50+ volunteer team management</li>
+                <li>639+ LinkedIn engagement reactions</li>
+                <li>Live stage transition &amp; production</li>
+              </ul>
+              <div class="card-tech">
+                <span class="tech-badge">Stage Management</span>
+                <span class="tech-badge">Team Leadership</span>
+                <span class="tech-badge">Event Planning</span>
+                <span class="tech-badge">VIP Coordination</span>
+              </div>
+              <div class="card-links">
+                <a href="https://www.linkedin.com/in/sujay-2oo5/" target="_blank" rel="noopener noreferrer"
+                   class="btn btn-sm btn-primary" data-hover-cursor>
+                  View on LinkedIn ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Real-Time Weather Dashboard -->
+          <article class="project-card" data-tilt data-reveal>
+            <div class="card-visual" style="--card-gradient: linear-gradient(135deg, #0284c7 0%, #38bdf8 30%, #7dd3fc 60%, #e0f2fe 100%)"></div>
+            <div class="card-body">
+              <div class="card-meta">2026 &middot; Personal Project</div>
+              <h3 class="card-title">Real-Time Weather Dashboard</h3>
+              <p class="card-tagline">Dynamic weather tracking application with interactive maps and 7-day forecasting.</p>
+              <p class="card-desc">Built with JavaScript and REST API integration (OpenWeatherMap). Features real-time location detection, dynamic backgrounds based on weather conditions, and a responsive Tailwind CSS layout.</p>
+              <ul class="card-features">
+                <li>Real-time weather data &amp; multi-city search</li>
+                <li>Interactive forecasting charts</li>
+                <li>Dynamic responsive UI</li>
+                <li>Geolocation support</li>
+              </ul>
+              <div class="card-tech">
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">REST APIs</span>
+                <span class="tech-badge">Tailwind CSS</span>
+                <span class="tech-badge">HTML5</span>
+              </div>
+              <div class="card-links">
+                <a href="#" class="btn btn-sm btn-primary" data-hover-cursor>
+                  Live Demo ↗
+                </a>
+                <a href="https://github.com/sujayraj42" target="_blank" rel="noopener noreferrer"
+                   class="btn btn-sm btn-ghost" data-hover-cursor>
+                  GitHub ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- TaskManager Pro API -->
+          <article class="project-card" data-tilt data-reveal>
+            <div class="card-visual" style="--card-gradient: linear-gradient(135deg, #e11d48 0%, #fb7185 30%, #fda4af 60%, #ffe4e6 100%)"></div>
+            <div class="card-body">
+              <div class="card-meta">2026 &middot; Backend Project</div>
+              <h3 class="card-title">TaskMaster REST API Engine</h3>
+              <p class="card-tagline">High-performance Node.js backend for managing tasks, users, and authentication.</p>
+              <p class="card-desc">Developed a robust server-side application using Express and MySQL. Features JWT authentication, role-based access control (RBAC), advanced error handling, and comprehensive API documentation.</p>
+              <ul class="card-features">
+                <li>Secure JWT Authentication</li>
+                <li>Optimized MySQL Queries</li>
+                <li>Role-Based Access Control</li>
+                <li>CRUD Operations &amp; Pagination</li>
+              </ul>
+              <div class="card-tech">
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">Express</span>
+                <span class="tech-badge">MySQL</span>
+                <span class="tech-badge">JWT</span>
+              </div>
+              <div class="card-links">
+                <a href="#" class="btn btn-sm btn-primary" data-hover-cursor>
+                  API Docs ↗
+                </a>
+                <a href="https://github.com/sujayraj42" target="_blank" rel="noopener noreferrer"
+                   class="btn btn-sm btn-ghost" data-hover-cursor>
+                  GitHub ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ CERTIFICATIONS ═══════════════ -->
+    <section id="certifications" aria-label="Certifications">
+      <span class="section-bg-number" aria-hidden="true">04</span>
+      <div class="container">
+        <p class="section-subtitle">Verified Credentials</p>
+        <h2 class="section-heading">Certifications</h2>
+        <div class="certs-grid">
+
+          <!-- UC Davis Cert -->
+          <article class="cert-card" data-reveal>
+            <div class="cert-issuer-badge" style="--issuer-color: #003B73">UC Davis</div>
+            <div class="cert-body">
+              <h3>Introduction to Web Development</h3>
+              <p class="cert-platform">via Coursera · University of California, Davis</p>
+              <p class="cert-date">Issued June 2025</p>
+              <div class="cert-id-wrapper">
+                <span class="cert-id-label">Credential ID</span>
+                <code class="cert-id" data-credential="MNQQHK6QJ1SO">
+                  <span class="cert-id-text"></span>
+                  <span class="cert-id-cursor" aria-hidden="true">_</span>
+                </code>
+              </div>
+              <div class="cert-skills">
+                <span class="skill-chip">HTML5</span>
+                <span class="skill-chip">CSS3</span>
+                <span class="skill-chip">JavaScript</span>
+                <span class="skill-chip">Web Standards</span>
+              </div>
+              <button class="btn btn-verify" popovertarget="cert-popover-1" data-hover-cursor>
+                ✓ Verify Certificate ↗
+              </button>
+            </div>
+          </article>
+
+          <!-- Popover: UC Davis -->
+          <div id="cert-popover-1" popover aria-label="Certificate verification">
+            <h4>Introduction to Web Development</h4>
+            <p>Issued by: University of California, Davis via Coursera</p>
+            <p>Credential ID: <code>MNQQHK6QJ1SO</code></p>
+            <a href="https://www.coursera.org/account/accomplishments/verify/MNQQHK6QJ1SO"
+               target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-hover-cursor>
+              Verify on Coursera ↗
+            </a>
+          </div>
+
+          <!-- Interactivity with JavaScript Cert -->
+          <article class="cert-card" data-reveal>
+            <div class="cert-issuer-badge" style="--issuer-color: #00274C">U-M</div>
+            <div class="cert-body">
+              <h3>Interactivity with JavaScript</h3>
+              <p class="cert-platform">via Coursera · University of Michigan</p>
+              <p class="cert-date">Issued 2025</p>
+              <div class="cert-id-wrapper">
+                <span class="cert-id-label">Credential ID</span>
+                <code class="cert-id" data-credential="PENDING">
+                  <span class="cert-id-text"></span>
+                  <span class="cert-id-cursor" aria-hidden="true">_</span>
+                </code>
+              </div>
+              <div class="cert-skills">
+                <span class="skill-chip">JavaScript</span>
+                <span class="skill-chip">DOM Manipulation</span>
+                <span class="skill-chip">Events</span>
+              </div>
+              <button class="btn btn-verify" popovertarget="cert-popover-2" data-hover-cursor>
+                ✓ View on Coursera ↗
+              </button>
+            </div>
+          </article>
+
+          <!-- Popover: U-M JavaScript -->
+          <div id="cert-popover-2" popover aria-label="Certificate verification">
+            <h4>Interactivity with JavaScript</h4>
+            <p>Issued by: University of Michigan via Coursera</p>
+            <p>Credential ID: <code>Pending</code></p>
+            <a href="https://www.coursera.org/learn/javascript"
+               target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-hover-cursor>
+              View on Coursera ↗
+            </a>
+          </div>
+
+          <!-- C for Everyone Cert -->
+          <article class="cert-card" data-reveal>
+            <div class="cert-issuer-badge" style="--issuer-color: #003C6C">UC Santa Cruz</div>
+            <div class="cert-body">
+              <h3>C for Everyone: Programming Fundamentals</h3>
+              <p class="cert-platform">via Coursera · University of California, Santa Cruz</p>
+              <p class="cert-date">Issued 2025</p>
+              <div class="cert-id-wrapper">
+                <span class="cert-id-label">Credential ID</span>
+                <code class="cert-id" data-credential="PENDING">
+                  <span class="cert-id-text"></span>
+                  <span class="cert-id-cursor" aria-hidden="true">_</span>
+                </code>
+              </div>
+              <div class="cert-skills">
+                <span class="skill-chip">C Programming</span>
+                <span class="skill-chip">Algorithms</span>
+                <span class="skill-chip">Logic Building</span>
+              </div>
+              <button class="btn btn-verify" popovertarget="cert-popover-3" data-hover-cursor>
+                ✓ View on Coursera ↗
+              </button>
+            </div>
+          </article>
+
+          <!-- Popover: UC Santa Cruz -->
+          <div id="cert-popover-3" popover aria-label="Certificate verification">
+            <h4>C for Everyone: Programming Fundamentals</h4>
+            <p>Issued by: University of California, Santa Cruz via Coursera</p>
+            <p>Credential ID: <code>Pending</code></p>
+            <a href="https://www.coursera.org/learn/c-for-everyone"
+               target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-hover-cursor>
+              View on Coursera ↗
+            </a>
+          </div>
+
+          <!-- Google Cert -->
+          <article class="cert-card" data-reveal>
+            <div class="cert-issuer-badge" style="--issuer-color: #4285F4">Google</div>
+            <div class="cert-body">
+              <h3>Technical Support Fundamentals</h3>
+              <p class="cert-platform">via Coursera · Google Career Certificates</p>
+              <p class="cert-date">Issued June 2025</p>
+              <div class="cert-id-wrapper">
+                <span class="cert-id-label">Credential ID</span>
+                <code class="cert-id" data-credential="5EFFZDVAOXU6">
+                  <span class="cert-id-text"></span>
+                  <span class="cert-id-cursor" aria-hidden="true">_</span>
+                </code>
+              </div>
+              <div class="cert-skills">
+                <span class="skill-chip">IT Support</span>
+                <span class="skill-chip">Networking</span>
+                <span class="skill-chip">OS Fundamentals</span>
+                <span class="skill-chip">Troubleshooting</span>
+              </div>
+              <button class="btn btn-verify" popovertarget="cert-popover-4" data-hover-cursor>
+                ✓ Verify Certificate ↗
+              </button>
+            </div>
+          </article>
+
+          <!-- Popover: Google -->
+          <div id="cert-popover-4" popover aria-label="Certificate verification">
+            <h4>Technical Support Fundamentals</h4>
+            <p>Issued by: Google via Coursera</p>
+            <p>Credential ID: <code>5EFFZDVAOXU6</code></p>
+            <a href="https://www.coursera.org/account/accomplishments/verify/5EFFZDVAOXU6"
+               target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-hover-cursor>
+              Verify on Coursera ↗
+            </a>
+          </div>
+
+          <!-- Student Volunteer Recognition -->
+          <article class="cert-card" data-reveal>
+            <div class="cert-issuer-badge" style="--issuer-color: #FF6B35">LPU</div>
+            <div class="cert-body">
+              <h3>Student Volunteer Recognition</h3>
+              <p class="cert-platform">Freshmen Induction 2025 · Lovely Professional University</p>
+              <p class="cert-date">Issued 2025</p>
+              <div class="cert-id-wrapper">
+                <span class="cert-id-label">Credential ID</span>
+                <code class="cert-id" data-credential="PENDING">
+                  <span class="cert-id-text"></span>
+                  <span class="cert-id-cursor" aria-hidden="true">_</span>
+                </code>
+              </div>
+              <div class="cert-skills">
+                <span class="skill-chip">Event Coordination</span>
+                <span class="skill-chip">Volunteer Management</span>
+                <span class="skill-chip">Leadership</span>
+              </div>
+              <button class="btn btn-verify" popovertarget="cert-popover-5" data-hover-cursor>
+                ✓ View Details ↗
+              </button>
+            </div>
+          </article>
+
+          <!-- Popover: LPU Volunteer -->
+          <div id="cert-popover-5" popover aria-label="Certificate verification">
+            <h4>Student Volunteer Recognition</h4>
+            <p>Issued by: Lovely Professional University</p>
+            <p>Event: Freshmen Induction 2025</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ EDUCATION ═══════════════ -->
+    <section id="education" aria-label="Academic Journey">
+      <span class="section-bg-number" aria-hidden="true">05</span>
+      <div class="container">
+        <p class="section-subtitle">Learning Path</p>
+        <h2 class="section-heading">Academic Journey</h2>
+        <div class="timeline-wrapper">
+          <div id="timeline-line" aria-hidden="true"></div>
+
+          <!-- EDU 1: LPU BCA -->
+          <article class="edu-card" data-reveal data-edu="bca">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <div class="edu-body">
+              <div class="edu-status-badge in-progress">In Progress</div>
+              <h3>Bachelor of Computer Applications (BCA)</h3>
+              <p class="edu-institution">
+                <a href="https://www.lpu.in/" target="_blank" rel="noopener noreferrer">
+                  Lovely Professional University ↗
+                </a>
+              </p>
+              <p class="edu-field">Specializing in Full Stack Web Development and Software Systems</p>
+              <p class="edu-period">2023 – Present</p>
+              <p class="edu-location">Phagwara, Punjab, India</p>
+            </div>
+          </article>
+
+          <!-- EDU 2: Diploma -->
+          <article class="edu-card" data-reveal data-edu="diploma">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <div class="edu-body">
+              <div class="edu-grade-badge">Distinction — 83.75%</div>
+              <h3>Advance Diploma in Computer Application</h3>
+              <p class="edu-institution">Parmar Commercial Institute</p>
+              <p class="edu-field">Computer Science</p>
+              <p class="edu-period">Mar 2022 – Apr 2023</p>
+            </div>
+          </article>
+
+          <!-- EDU 3: 12th -->
+          <article class="edu-card" data-reveal data-edu="12th">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <div class="edu-body">
+              <div class="edu-class-badge">Class XII</div>
+              <h3>Higher Secondary (12th)</h3>
+              <p class="edu-institution">D.Y. Patil Pushpalata Patil International School</p>
+              <p class="edu-field">CBSE Board — Science Stream</p>
+              <p class="edu-period">2022</p>
+            </div>
+          </article>
+
+          <!-- EDU 4: 10th -->
+          <article class="edu-card" data-reveal data-edu="10th">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <div class="edu-body">
+              <div class="edu-class-badge">Class X</div>
+              <h3>Secondary School (10th)</h3>
+              <p class="edu-institution">New Era High School</p>
+              <p class="edu-field">CBSE Board</p>
+              <p class="edu-period">2020</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ EXPERIENCE ═══════════════ -->
+    <section id="experience" aria-label="Events and Experience">
+      <span class="section-bg-number" aria-hidden="true">06</span>
+      <div class="container">
+        <p class="section-subtitle">Real-World Impact</p>
+        <h2 class="section-heading">Events I've Owned</h2>
+        <div class="events-grid">
+
+          <!-- Event 1: Chhatra Sansad -->
+          <div class="event-card" data-reveal>
+            <div class="event-visual" style="--event-color: #6C63FF" aria-hidden="true"></div>
+            <div class="event-body">
+              <div class="event-role-badge" style="--event-color: #6C63FF">Stage Manager</div>
+              <h3>8th Chhatra Sansad India Conclave</h3>
+              <p class="event-org">LPU — DSEE Student Welfare Wing</p>
+              <div class="event-scale">🎯 20,000+ attendees</div>
+              <p class="event-speakers"><strong>Speakers:</strong> Smriti Irani (Former Union Minister), Khan Sir, Dr. V Narayanan (ISRO Chairman), Jaya Kishori, Temjen Imna Along</p>
+              <ul class="event-responsibilities">
+                <li>Seamless stage transitions</li>
+                <li>Volunteer coordination</li>
+                <li>Felicitation & bouquet ceremonies</li>
+                <li>Keynote session management</li>
+                <li>Guest comfort & requirements</li>
+              </ul>
+              <p class="event-reactions">💬 165 LinkedIn reactions</p>
+            </div>
+          </div>
+
+          <!-- Event 2: Women's Day -->
+          <div class="event-card" data-reveal>
+            <div class="event-visual" style="--event-color: #FF6584" aria-hidden="true"></div>
+            <div class="event-body">
+              <div class="event-role-badge" style="--event-color: #FF6584">Stage Manager</div>
+              <h3>International Women's Day Celebration</h3>
+              <p class="event-org">LPU · 8 March 2025</p>
+              <p class="event-speakers"><strong>Speaker:</strong> Dr. Rashmi Mittal (Pro Chancellor, LPU)</p>
+              <ul class="event-responsibilities">
+                <li>Bouquet ceremony</li>
+                <li>Lamplighting ceremony</li>
+                <li>Felicitation ceremony</li>
+                <li>Speaker & panelist coordination</li>
+                <li>Technical team sync</li>
+              </ul>
+              <p class="event-reactions">💬 88+ LinkedIn reactions</p>
+            </div>
+          </div>
+
+          <!-- Event 3: Youth Talk -->
+          <div class="event-card" data-reveal>
+            <div class="event-visual" style="--event-color: #43E97B" aria-hidden="true"></div>
+            <div class="event-body">
+              <div class="event-role-badge" style="--event-color: #43E97B">Stage Manager</div>
+              <h3>Youth Talk ft. Gaurav Taneja (FlyingBeast)</h3>
+              <p class="event-org">LPU — DSEE</p>
+              <p class="event-speakers"><strong>Speaker:</strong> Gaurav Taneja (YouTuber, fitness expert, pilot)</p>
+              <ul class="event-responsibilities">
+                <li>Stage setup coordination</li>
+                <li>Bouquet & felicitation for Gaurav Taneja</li>
+                <li>Transition management between segments</li>
+                <li>Volunteer & technical team coordination</li>
+              </ul>
+              <p class="event-reactions">💬 157 LinkedIn reactions</p>
+            </div>
+          </div>
+
+          <!-- Event 4: Gita Olympiad -->
+          <div class="event-card" data-reveal>
+            <div class="event-visual" style="--event-color: #FFD700" aria-hidden="true"></div>
+            <div class="event-body">
+              <div class="event-role-badge" style="--event-color: #FFD700">Event Lead</div>
+              <h3>Gita Olympiad Prize Distribution</h3>
+              <p class="event-org">LPU</p>
+              <p class="event-speakers"><strong>Speakers:</strong> Bhakt Bhagwat, H.G. Dr. Vrindavan Chandra Das</p>
+              <ul class="event-responsibilities">
+                <li>Volunteer deployment & management</li>
+                <li>Guest handling</li>
+                <li>Stage proceedings</li>
+                <li>Event promotion & coordination</li>
+              </ul>
+              <p class="event-reactions">💬 229 LinkedIn reactions</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ CONTACT ═══════════════ -->
+    <section id="contact" aria-label="Contact">
+      <span class="section-bg-number" aria-hidden="true">07</span>
+      <div class="contact-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- Info -->
+          <div class="contact-info" data-reveal>
+            <p class="section-subtitle">Reach Out</p>
+            <h2>Let's Build Something Together →</h2>
+            <p>I'm currently available for internships and junior Full Stack Developer roles. If you have a project in mind or just want to connect, send a direct message below!</p>
+            <div class="contact-links">
+              <a href="https://www.linkedin.com/in/sujay-2oo5/" target="_blank" rel="noopener noreferrer" class="contact-link-item" data-hover-cursor>
+                <div class="contact-link-icon">🔗</div>
+                <div class="contact-link-text">
+                  <span class="contact-link-label">LinkedIn</span>
+                  <span class="contact-link-value">linkedin.com/in/sujay-2oo5</span>
+                </div>
+              </a>
+              <button class="contact-link-item" data-hover-cursor data-copy-email>
+                <div class="contact-link-icon">📧</div>
+                <div class="contact-link-text">
+                  <span class="contact-link-label">Email (click to copy)</span>
+                  <span class="contact-link-value">sujay@example.com</span>
+                </div>
+              </button>
+              <div class="contact-link-item">
+                <div class="contact-link-icon">📍</div>
+                <div class="contact-link-text">
+                  <span class="contact-link-label">Location</span>
+                  <span class="contact-link-value">Jalandhar, Punjab, India</span>
+                </div>
+              </div>
+            </div>
+            <div class="badge badge-status" style="margin-top: var(--space-4);">
+              <span class="badge-dot" aria-hidden="true"></span>
+              Open to Work — Full Stack / Frontend Roles
+            </div>
+          </div>
+
+          <!-- Form -->
+          <form class="contact-form" data-reveal novalidate>
+            <div class="form-group">
+              <label for="contact-name">Your Name</label>
+              <input type="text" id="contact-name" name="name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Your Email</label>
+              <input type="email" id="contact-email" name="email" placeholder="john@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" placeholder="Let's collaborate on something amazing..." required></textarea>
+            </div>
+            <button type="submit" class="btn-submit" data-hover-cursor>Send Message →</button>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer>
+    <div class="footer-content">
+      <p>© 2026 Sujay Chakravarti · Full Stack Developer · Built with HTML, CSS &amp; JavaScript</p>
+      <nav class="footer-nav" aria-label="Social links">
+        <a href="https://www.linkedin.com/in/sujay-2oo5/" target="_blank" rel="noopener noreferrer" data-hover-cursor>LinkedIn</a>
+        <a href="https://github.com/sujayraj42" target="_blank" rel="noopener noreferrer" data-hover-cursor>GitHub</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Custom Cursor (desktop only) -->
+  <div id="cursor-dot"  aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+  <div id="cursor-halo" aria-hidden="true"></div>
+
+  <!-- Toast notification container -->
+  <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Confetti canvas (Konami) -->
+  <canvas id="konami-canvas" aria-hidden="true"></canvas>
+
+  <!-- Floating Back to Top -->
+  <button id="back-to-top" aria-label="Back to top" data-hover-cursor>↑</button>
+
+  <!-- JS Entry Point (type=module = deferred by default) -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

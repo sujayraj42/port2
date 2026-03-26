@@ -1,0 +1,177 @@
+/* Declare all layers — order = priority */
+@layer
+  reset,
+  tokens,
+  base,
+  animations,
+  layout,
+  components,
+  cursor,
+  sections,
+  utilities,
+  responsive;
+
+@layer tokens {
+  :root {
+    /* ── Skeuomorphic Color System ── */
+    color-scheme: dark light;
+
+    /* Surface colors — warm charcoal with subtle warmth */
+    --void:           #1a1612;
+    --obsidian:       #211d18;
+    --surface:        #2a2520;
+    --surface-raise:  #342e28;
+    --frost:          #3e3730;
+
+    /* Accent: Warm Amber Gold */
+    --accent:         #c8923a;
+    --accent-light:   #daa95a;
+    --accent-dim:     #8a6424;
+    --accent-rgb:     200, 146, 58;
+
+    /* Secondary accents */
+    --copper:         #b87333;
+    --emerald:        #2e8b57;
+    --ruby:           #9b2335;
+    --steel:          #6b7b8d;
+
+    /* Text */
+    --text-primary:   #ede4d4;
+    --text-secondary: #b8ad9e;
+    --text-muted:     #7a6f62;
+    --text-ghost:     #4a4238;
+
+    /* Leather / material textures */
+    --leather-dark:   #2c2218;
+    --leather-mid:    #3d3128;
+    --leather-light:  #4e4038;
+    --wood-dark:      #3b2f20;
+    --wood-mid:       #5a4a38;
+    --metal-dark:     #3a3a42;
+    --metal-light:    #5a5a65;
+
+    /* Borders — bevel system */
+    --bevel-light:    rgba(255, 255, 255, 0.08);
+    --bevel-dark:     rgba(0, 0, 0, 0.4);
+    --border-groove:  rgba(0, 0, 0, 0.3);
+    --border-ridge:   rgba(255, 255, 255, 0.06);
+
+    /* Semantic */
+    --success:        #2e8b57;
+    --warning:        #c8923a;
+    --error:          #9b2335;
+
+    /* ── Typography ── */
+    --font-display:   'Clash Display', 'Georgia', serif;
+    --font-body:      'Satoshi', 'Segoe UI', sans-serif;
+    --font-mono:      'JetBrains Mono', 'Courier New', monospace;
+
+    /* Fluid font scale */
+    --text-2xs:  clamp(0.65rem,  1vw,   0.75rem);
+    --text-xs:   clamp(0.75rem,  1.5vw, 0.875rem);
+    --text-sm:   clamp(0.875rem, 2vw,   1rem);
+    --text-base: clamp(1rem,     2.5vw, 1.125rem);
+    --text-lg:   clamp(1.125rem, 3vw,   1.375rem);
+    --text-xl:   clamp(1.5rem,   4vw,   2rem);
+    --text-2xl:  clamp(2rem,     5vw,   3rem);
+    --text-3xl:  clamp(3rem,     7vw,   5rem);
+    --text-hero: clamp(3.5rem,   9vw,   8rem);
+
+    /* ── Spacing ── */
+    --space-1: 0.25rem;   --space-2: 0.5rem;
+    --space-3: 0.75rem;   --space-4: 1rem;
+    --space-6: 1.5rem;    --space-8: 2rem;
+    --space-12: 3rem;     --space-16: 4rem;
+    --space-24: 6rem;     --space-32: 8rem;
+    --space-48: 12rem;
+
+    --container-max: 1280px;
+    --section-pad-y: clamp(5rem, 12vh, 9rem);
+    --nav-height:    72px;
+
+    /* ── Radius — rounded, organic ── */
+    --radius-xs:   4px;
+    --radius-sm:   8px;
+    --radius-md:   14px;
+    --radius-lg:   22px;
+    --radius-xl:   32px;
+    --radius-full: 9999px;
+
+    /* ── Easing — heavier, more physical ── */
+    --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
+    --ease-bounce:      cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-spring:      cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    /* ── Duration ── */
+    --dur-instant: 80ms;
+    --dur-fast:    150ms;
+    --dur-base:    300ms;
+    --dur-slow:    600ms;
+    --dur-xslow:   900ms;
+    --dur-loader:  1200ms;
+
+    /* ── Skeuomorphic Shadows — realistic light from top-left ── */
+    --shadow-raised:
+      inset 0 1px 0 var(--bevel-light),
+      inset 0 -1px 0 var(--bevel-dark),
+      0 2px 4px rgba(0,0,0,0.3),
+      0 6px 16px rgba(0,0,0,0.2);
+
+    --shadow-pressed:
+      inset 0 2px 6px rgba(0,0,0,0.4),
+      inset 0 1px 2px rgba(0,0,0,0.3);
+
+    --shadow-card:
+      inset 0 1px 0 rgba(255,255,255,0.05),
+      0 1px 1px rgba(0,0,0,0.15),
+      0 4px 8px rgba(0,0,0,0.15),
+      0 12px 32px rgba(0,0,0,0.2);
+
+    --shadow-deep:
+      inset 0 1px 0 rgba(255,255,255,0.04),
+      0 2px 4px rgba(0,0,0,0.2),
+      0 8px 24px rgba(0,0,0,0.25),
+      0 24px 48px rgba(0,0,0,0.2);
+
+    --shadow-inset:
+      inset 0 2px 8px rgba(0,0,0,0.35),
+      inset 0 1px 2px rgba(0,0,0,0.25);
+
+    --shadow-emboss:
+      inset 0 1px 0 rgba(255,255,255,0.1),
+      0 1px 2px rgba(0,0,0,0.3);
+
+    /* ── Texture ── */
+    --noise-bg: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+
+    --leather-texture:
+      radial-gradient(ellipse at 20% 50%, rgba(255,255,255,0.02) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.015) 0%, transparent 40%);
+
+    --stitching: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 6px,
+      rgba(200,146,58,0.15) 6px,
+      rgba(200,146,58,0.15) 8px
+    );
+  }
+
+  /* Light theme overrides — warm parchment */
+  [data-theme="light"] {
+    --void:           #f5ede0;
+    --obsidian:       #ede4d4;
+    --surface:        #e2d8c8;
+    --surface-raise:  #d8ccba;
+    --frost:          #cec0ac;
+    --text-primary:   #2a2218;
+    --text-secondary: #5a4e40;
+    --text-muted:     #8a7e70;
+    --text-ghost:     #c0b4a4;
+    --bevel-light:    rgba(255, 255, 255, 0.5);
+    --bevel-dark:     rgba(0, 0, 0, 0.12);
+    --leather-dark:   #d8ccba;
+    --leather-mid:    #cec0ac;
+  }
+}
