@@ -14,9 +14,8 @@ export function initObserver() {
   // Set initial hidden state
   revealElements.forEach(el => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(32px)';
-    el.style.filter = 'blur(4px)';
-    el.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+    el.style.transform = 'translateY(24px)'; // Less vertical offset
+    el.style.transition = 'opacity 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1)';
   });
 
   const observer = new IntersectionObserver(entries => {
@@ -25,13 +24,12 @@ export function initObserver() {
         const el = entry.target;
         el.style.opacity = '1';
         el.style.transform = 'translateY(0) translateX(0)';
-        el.style.filter = 'blur(0)';
         observer.unobserve(el);
       }
     });
   }, {
-    threshold: 0.05,
-    rootMargin: '10% 0px 0px 0px',
+    threshold: 0, // Trigger immediately when entering bounds
+    rootMargin: '0px 0px 15% 0px', // Trigger 15% before scrolling into view!
   });
 
   revealElements.forEach(el => observer.observe(el));

@@ -212,12 +212,9 @@ function initSectionDots() {
 
 // ── Performance: content-visibility for below-fold sections ──
 function initContentVisibility() {
-  const sections = $$('section[id]');
-  // Skip hero (first section)
-  sections.slice(1).forEach(section => {
-    section.style.contentVisibility = 'auto';
-    section.style.containIntrinsicSize = 'auto 600px';
-  });
+  // Disabled: content-visibility: auto triggers massive layout/paint recalculations
+  // right as you scroll over sections, which directly causes the scroll lag & janky animations.
+  return;
 }
 
 // ── Bootstrap ──
