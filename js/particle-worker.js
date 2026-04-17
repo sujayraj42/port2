@@ -4,17 +4,17 @@
  * v2: Reduced particles, spatial grid, optimized draw calls.
  */
 
-const PARTICLE_COUNT = 60;
-const CONNECT_DIST = 130;
-const REPEL_RADIUS = 100;
-const REPEL_STRENGTH = 0.8;
-const BASE_SPEED = 0.35;
+const PARTICLE_COUNT = 35;
+const CONNECT_DIST = 100;
+const REPEL_RADIUS = 80;
+const REPEL_STRENGTH = 0.5;
+const BASE_SPEED = 0.3;
 const CELL_SIZE = CONNECT_DIST;
 
 const COLORS = [
-  'rgba(200,146,58,0.6)',
-  'rgba(184,115,51,0.5)',
-  'rgba(218,169,90,0.4)',
+  'rgba(200,146,58,0.5)',
+  'rgba(184,115,51,0.4)',
+  'rgba(218,169,90,0.35)',
 ];
 
 let ctx = null;

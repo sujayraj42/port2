@@ -21,7 +21,7 @@
     opacity: 0.6;
   }
 
-  /* Warm ambient orbs — like stage lights */
+  /* Warm ambient orbs — GPU-accelerated with will-change */
   .hero-bg-orbs {
     position: absolute;
     inset: 0;
@@ -29,32 +29,35 @@
     overflow: hidden;
   }
 
+  /* Orbs use radial-gradient + opacity instead of filter:blur() which
+     forces expensive GPU rasterization on every frame */
   .orb {
     position: absolute;
     border-radius: 50%;
-    filter: blur(100px);
-    opacity: 0.12;
+    will-change: transform;
+    transform: translateZ(0);
+    /* No filter:blur — use radial-gradient with large transparent stop instead */
   }
 
   .orb-1 {
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, var(--accent), transparent 70%);
-    top: -10%; left: -10%;
-    animation: float-orb-1 20s ease-in-out infinite;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle at center, rgba(200,146,58,0.08) 0%, rgba(200,146,58,0.04) 40%, transparent 70%);
+    top: -15%; left: -15%;
+    animation: float-orb-1 24s ease-in-out infinite;
   }
 
   .orb-2 {
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, var(--copper), transparent 70%);
-    bottom: -15%; right: -5%;
-    animation: float-orb-2 25s ease-in-out infinite;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle at center, rgba(184,115,51,0.07) 0%, rgba(184,115,51,0.03) 40%, transparent 70%);
+    bottom: -20%; right: -10%;
+    animation: float-orb-2 30s ease-in-out infinite;
   }
 
   .orb-3 {
-    width: 350px; height: 350px;
-    background: radial-gradient(circle, var(--emerald), transparent 70%);
-    top: 40%; right: 30%;
-    animation: float-orb-3 18s ease-in-out infinite;
+    width: 450px; height: 450px;
+    background: radial-gradient(circle at center, rgba(46,139,87,0.05) 0%, rgba(46,139,87,0.02) 40%, transparent 70%);
+    top: 40%; right: 25%;
+    animation: float-orb-3 22s ease-in-out infinite;
   }
 
   /* Subtle leather grid overlay */
@@ -78,8 +81,9 @@
   }
 
   .hero-name { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-4); margin-bottom: var(--space-6); }
-  .hero-name-word { display: inline-flex; }
+  .hero-name-word { display: inline-flex; overflow: hidden; }
 
+  /* Characters start hidden — GSAP animates them in */
   .hero-name .char {
     display: inline-block;
     font-family: var(--font-display);
@@ -91,9 +95,9 @@
       0 2px 4px rgba(0,0,0,0.4),
       0 4px 8px rgba(0,0,0,0.2),
       0 0 1px rgba(0,0,0,0.3);
-    clip-path: inset(0 100% 0 0);
-    animation: clip-reveal-x 0.6s var(--ease-out-expo) forwards;
-    animation-delay: calc(var(--char-index, 0) * 60ms + 2.1s);
+    opacity: 0;
+    transform: translateY(100%) rotateX(-90deg);
+    will-change: transform, opacity;
   }
 
   .hero-rule {
@@ -103,13 +107,8 @@
     margin: 0 auto var(--space-6);
     border-radius: var(--radius-full);
     box-shadow: 0 0 8px rgba(200,146,58,0.3);
-    animation: heroRuleReveal 0.5s var(--ease-out-expo) 2.6s forwards;
+    width: 0;
     opacity: 0;
-  }
-
-  @keyframes heroRuleReveal {
-    from { width: 0; opacity: 0; }
-    to { width: 100px; opacity: 1; }
   }
 
   .hero-typed-wrapper {
@@ -119,7 +118,7 @@
     margin-bottom: var(--space-3);
     min-height: 2rem;
     opacity: 0;
-    animation: fade-in 0.5s var(--ease-out-expo) 2.9s forwards;
+    transform: translateY(20px);
     text-shadow: 0 1px 2px rgba(0,0,0,0.3);
   }
 
@@ -135,7 +134,7 @@
     color: var(--text-muted);
     margin-bottom: var(--space-6);
     opacity: 0;
-    animation: fade-rise 0.5s var(--ease-out-expo) 3.1s forwards;
+    transform: translateY(20px);
     text-shadow: 0 1px 1px rgba(0,0,0,0.2);
   }
 
@@ -153,7 +152,7 @@
     border-radius: var(--radius-full);
     margin-bottom: var(--space-8);
     opacity: 0;
-    animation: fade-rise 0.5s var(--ease-out-expo) 3.3s forwards;
+    transform: translateY(20px) scale(0.9);
     box-shadow:
       inset 0 1px 0 rgba(255,255,255,0.1),
       0 2px 6px rgba(0,0,0,0.3);
@@ -167,9 +166,13 @@
     animation: status-pulse 2s ease-in-out infinite;
   }
 
-  .hero-cta { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-bottom: var(--space-12); }
-  .hero-cta .btn:nth-child(1) { opacity: 0; animation: fade-rise 0.5s var(--ease-out-expo) 3.5s forwards; }
-  .hero-cta .btn:nth-child(2) { opacity: 0; animation: fade-rise 0.5s var(--ease-out-expo) 3.65s forwards; }
+  .hero-cta {
+    display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-bottom: var(--space-12);
+  }
+  .hero-cta .btn {
+    opacity: 0;
+    transform: translateY(30px);
+  }
 
   .hero-scroll-indicator {
     position: absolute;
@@ -181,7 +184,6 @@
     align-items: center;
     gap: var(--space-2);
     opacity: 0;
-    animation: fade-in 0.5s var(--ease-out-expo) 3.9s forwards;
   }
 
   .scroll-chevron {

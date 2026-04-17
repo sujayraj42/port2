@@ -72,9 +72,8 @@
   .flex-center { display: flex; align-items: center; justify-content: center; }
   .flex-between { display: flex; align-items: center; justify-content: space-between; }
 
-  /* Content visibility for perf */
+  /* GPU-accelerated sections — use contain: paint for isolation without layout thrash */
   #about, #skills, #projects, #certifications, #education, #experience, #contact {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 600px;
+    contain: paint;
   }
 }

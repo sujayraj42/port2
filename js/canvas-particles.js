@@ -5,12 +5,12 @@
  */
 import { $, debounce, rand, dist } from './utils.js';
 
-const PARTICLE_COUNT = 60;
-const CONNECT_DIST = 130;
-const REPEL_RADIUS = 100;
-const REPEL_STRENGTH = 0.8;
-const BASE_SPEED = 0.35;
-const COLORS = ['rgba(200,146,58,0.6)','rgba(184,115,51,0.5)','rgba(218,169,90,0.4)'];
+const PARTICLE_COUNT = 35;   // Was 60
+const CONNECT_DIST = 100;    // Was 130
+const REPEL_RADIUS = 80;
+const REPEL_STRENGTH = 0.5;
+const BASE_SPEED = 0.3;
+const COLORS = ['rgba(200,146,58,0.5)','rgba(184,115,51,0.4)','rgba(218,169,90,0.35)'];
 
 /**
  * @param {string} selector - Canvas element selector

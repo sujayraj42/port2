@@ -82,6 +82,15 @@
   }
   </script>
 
+  <!-- Preload critical assets for faster paint -->
+  <link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" crossorigin>
+  <link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" crossorigin>
+  <link rel="modulepreload" href="./js/main.js">
+
+  <!-- GSAP — loaded without defer so it's ready before main.js module resolves -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+
   <!-- Import Map for NPM Packages in Vanilla JS -->
   <script type="importmap">
   {
@@ -445,11 +454,11 @@
                 <span class="tech-badge">Google Maps API</span>
               </div>
               <div class="card-links">
-                <a href="#" id="proj-varanasi-live" target="_blank" rel="noopener noreferrer"
+                <a href="https://sujayraj42.github.io/Explore-Varanasi---The-Spiritual-Capital/" id="proj-varanasi-live" target="_blank" rel="noopener noreferrer"
                    class="btn btn-sm btn-primary" data-hover-cursor>
                   Live Demo ↗
                 </a>
-                <a href="https://github.com/sujayraj42" target="_blank" rel="noopener noreferrer"
+                <a href="https://github.com/sujayraj42/Explore-Varanasi---The-Spiritual-Capital" target="_blank" rel="noopener noreferrer"
                    class="btn btn-sm btn-ghost" data-hover-cursor>
                   GitHub ↗
                 </a>
@@ -478,11 +487,11 @@
                 <span class="tech-badge">Responsive Design</span>
               </div>
               <div class="card-links">
-                <a href="#" id="proj-oakwood-live" target="_blank" rel="noopener noreferrer"
+                <a href="https://oakwood-furniture.vercel.app/" id="proj-oakwood-live" target="_blank" rel="noopener noreferrer"
                    class="btn btn-sm btn-primary" data-hover-cursor>
                   Live Demo ↗
                 </a>
-                <a href="https://github.com/sujayraj42" target="_blank" rel="noopener noreferrer"
+                <a href="https://oakwood-furniture.vercel.app/" target="_blank" rel="noopener noreferrer"
                    class="btn btn-sm btn-ghost" data-hover-cursor>
                   GitHub ↗
                 </a>
@@ -516,7 +525,7 @@
                 <a href="#hero" class="btn btn-sm btn-primary" data-hover-cursor>
                   You're Here ↗
                 </a>
-                <a href="https://github.com/sujayraj42" target="_blank" rel="noopener noreferrer"
+                <a href="https://github.com/sujayraj42/port2" target="_blank" rel="noopener noreferrer"
                    class="btn btn-sm btn-ghost" data-hover-cursor>
                   GitHub ↗
                 </a>
@@ -612,7 +621,7 @@
                 <a href="#" class="btn btn-sm btn-primary" data-hover-cursor>
                   Live Demo ↗
                 </a>
-                <a href="https://github.com/sujayraj42" target="_blank" rel="noopener noreferrer"
+                <a href="https://github.com/sujayraj42/weather-dashboard" target="_blank" rel="noopener noreferrer"
                    class="btn btn-sm btn-ghost" data-hover-cursor>
                   GitHub ↗
                 </a>
@@ -644,7 +653,78 @@
                 <a href="#" class="btn btn-sm btn-primary" data-hover-cursor>
                   API Docs ↗
                 </a>
-                <a href="https://github.com/sujayraj42" target="_blank" rel="noopener noreferrer"
+                <a href="https://github.com/sujayraj42/taskmaster-api" target="_blank" rel="noopener noreferrer"
+                   class="btn btn-sm btn-ghost" data-hover-cursor>
+                  GitHub ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- MindGuard — Capstone Project -->
+          <article class="project-card" data-tilt data-reveal>
+            <div class="card-visual" style="--card-gradient: linear-gradient(135deg, #0f172a 0%, #1e3a5f 25%, #1d4ed8 55%, #7c3aed 80%, #a855f7 100%)"></div>
+            <div class="card-body">
+              <div class="card-meta">2026 · Capstone Project · ⭐ 1</div>
+              <h3 class="card-title">MindGuard — Student Early-Risk Portal</h3>
+              <p class="card-tagline">AI-powered student mental health early-risk prediction portal built as a BCA capstone project.</p>
+              <p class="card-desc">MindGuard is a full-stack web application that identifies at-risk students using predictive algorithms and behavioral pattern analysis. Features a comprehensive dashboard, risk scoring engine, and real-time intervention alerts designed to support campus counseling teams.</p>
+              <ul class="card-features">
+                <li>AI-driven early-risk prediction engine</li>
+                <li>Student behavioral pattern analysis</li>
+                <li>Real-time intervention alert system</li>
+                <li>Counselor admin dashboard</li>
+                <li>Secure data handling &amp; role-based access</li>
+              </ul>
+              <div class="card-tech">
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">MongoDB</span>
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">REST APIs</span>
+              </div>
+              <div class="card-links">
+                <a href="https://github.com/sujayraj42/mindguard" target="_blank" rel="noopener noreferrer"
+                   class="btn btn-sm btn-primary" data-hover-cursor>
+                  View Project ↗
+                </a>
+                <a href="https://github.com/sujayraj42/mindguard" target="_blank" rel="noopener noreferrer"
+                   class="btn btn-sm btn-ghost" data-hover-cursor>
+                  GitHub ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Quiz App -->
+          <article class="project-card" data-tilt data-reveal>
+            <div class="card-visual" style="--card-gradient: linear-gradient(135deg, #064e3b 0%, #059669 30%, #34d399 60%, #a7f3d0 100%)"></div>
+            <div class="card-body">
+              <div class="card-meta">2026 · Full Stack Project · ⭐ 1</div>
+              <h3 class="card-title">Quiz App — Interactive Learning Platform</h3>
+              <p class="card-tagline">A dynamic full-stack quiz platform with MongoDB-backed question storage and real-time scoring.</p>
+              <p class="card-desc">Built a feature-rich quiz application with persistent data storage using MongoDB. Supports multiple question categories, live score tracking, quiz history, and a clean responsive UI. Backend powered by Node.js with a RESTful API architecture.</p>
+              <ul class="card-features">
+                <li>MongoDB question &amp; session storage</li>
+                <li>20+ seeded quiz questions across categories</li>
+                <li>Real-time score calculation &amp; feedback</li>
+                <li>Quiz history &amp; performance analytics</li>
+                <li>RESTful API with Express backend</li>
+              </ul>
+              <div class="card-tech">
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">MongoDB</span>
+                <span class="tech-badge">Express</span>
+                <span class="tech-badge">REST APIs</span>
+              </div>
+              <div class="card-links">
+                <a href="https://github.com/sujayraj42/quizz-app" target="_blank" rel="noopener noreferrer"
+                   class="btn btn-sm btn-primary" data-hover-cursor>
+                  View Project ↗
+                </a>
+                <a href="https://github.com/sujayraj42/quizz-app" target="_blank" rel="noopener noreferrer"
                    class="btn btn-sm btn-ghost" data-hover-cursor>
                   GitHub ↗
                 </a>

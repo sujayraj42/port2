@@ -1,28 +1,28 @@
 /**
  * main.js — Portfolio initialization orchestrator.
- * v2: Optimized init order, lazy loading, new features (back-to-top visibility, 
- * section progress dots, performance monitoring).
+ * v3: GSAP-powered animations for zero-lag performance.
+ * Replaced: CSS clip-path animations, IntersectionObserver reveals, scroll-skew.
+ * Added: GSAP timeline for hero, ScrollTrigger for reveals.
  */
 
 import { injectSpeedInsights } from '@vercel/speed-insights';
 import { inject as injectAnalytics } from '@vercel/analytics';
 
-import { initLoader }       from './loader.js';
-import { initCanvas }       from './canvas-particles.js';
-import { initNav }          from './nav.js';
-import { initCursor }       from './cursor.js';
-import { initTyped }        from './typed-text.js';
-import { initMagnetic }     from './magnetic.js';
-import { initObserver }     from './scroll-observer.js';
-import { initScrollSkew }   from './scroll-skew.js';
-import { initCounter }      from './counter.js';
-import { initProgressBars } from './progress-bars.js';
-import { initTimeline }     from './timeline-draw.js';
-import { initCardTilt }     from './card-tilt.js';
-import { initCredential }   from './credential-reveal.js';
-import { initTheme }        from './theme-toggle.js';
-import { initTransitions }  from './view-transitions.js';
-import { initKonami }       from './konami.js';
+import { initLoader }          from './loader.js';
+import { initCanvas }          from './canvas-particles.js';
+import { initNav }             from './nav.js';
+import { initCursor }          from './cursor.js';
+import { initTyped }           from './typed-text.js';
+import { initMagnetic }        from './magnetic.js';
+import { initCounter }         from './counter.js';
+import { initProgressBars }    from './progress-bars.js';
+import { initTimeline }        from './timeline-draw.js';
+import { initCardTilt }        from './card-tilt.js';
+import { initCredential }      from './credential-reveal.js';
+import { initTheme }           from './theme-toggle.js';
+import { initTransitions }     from './view-transitions.js';
+import { initKonami }          from './konami.js';
+import { initHeroAnimation, initScrollReveals } from './hero-animation.js';
 import {
   isTouchDevice,
   prefersReducedMotion,
@@ -210,21 +210,11 @@ function initSectionDots() {
   sections.forEach(s => observer.observe(s));
 }
 
-// ── Performance: content-visibility for below-fold sections ──
-function initContentVisibility() {
-  // Disabled: content-visibility: auto triggers massive layout/paint recalculations
-  // right as you scroll over sections, which directly causes the scroll lag & janky animations.
-  return;
-}
-
 // ── Bootstrap ──
 async function bootstrap() {
   // Initialize Vercel Insights & Analytics
   injectSpeedInsights();
   injectAnalytics();
-
-  // Apply content-visibility early for performance
-  initContentVisibility();
 
   // Split hero name into individual characters
   splitHeroName();
@@ -232,12 +222,23 @@ async function bootstrap() {
   // Loader runs first
   await initLoader();
 
+  // ── GSAP Hero Animation (replaces CSS clip-path animations) ──
+  const heroAnimPromise = !features.reducedMotion
+    ? initHeroAnimation()
+    : Promise.resolve();
+
+  // ── GSAP ScrollTrigger Reveals (replaces IntersectionObserver) ──
+  const scrollRevealPromise = !features.reducedMotion
+    ? initScrollReveals()
+    : Promise.resolve();
+
   // Parallel core initialization after loader
   const coreInit = [
+    heroAnimPromise,
+    scrollRevealPromise,
     initCanvas('#hero-canvas', features),
     initNav(),
     initTyped('#hero-typed', ['Full Stack Developer', 'BCA Student @ LPU', 'Building the Web']),
-    initObserver(),
     initCounter('[data-count-to]'),
     initProgressBars('[data-progress]'),
     initTimeline('#timeline-line'),
@@ -247,13 +248,12 @@ async function bootstrap() {
     initKonami(),
   ];
 
-  // Desktop-only features
+  // Desktop-only features (removed scroll-skew — it was causing layout thrashing)
   if (!features.touch && !features.reducedMotion) {
     coreInit.push(
       initCursor(),
       initMagnetic('[data-magnetic]'),
       initCardTilt('[data-tilt]'),
-      initScrollSkew('#main'),
     );
   }
 
