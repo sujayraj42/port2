@@ -114,12 +114,33 @@ export async function initHeroAnimation() {
 
 /**
  * Initialize GSAP ScrollTrigger for reveal animations.
- * Uses ScrollTrigger.batch() — ONE observer for ALL elements
- * instead of 30+ separate ScrollTriggers. Massive perf win.
+ * Uses ScrollTrigger.batch() — ONE observer for ALL elements.
+ * 
+ * SAFETY: Uses a CSS class to hide elements (not gsap.set opacity:0)
+ * so that if GSAP/ScrollTrigger fails for ANY reason, a hard timeout
+ * forces all content visible. This prevents blank-page scenarios.
  */
 export async function initScrollReveals() {
+  // ── Nuclear failsafe: if anything goes wrong, show all content after 3.5s ──
+  const failsafeTimer = setTimeout(() => {
+    document.querySelectorAll('[data-reveal],[data-reveal-left],[data-reveal-right],.section-heading').forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+      el.style.visibility = 'visible';
+    });
+  }, 3500);
+
   const gsap = await waitForGSAP();
-  if (!gsap || !window.ScrollTrigger) return;
+  if (!gsap || !window.ScrollTrigger) {
+    clearTimeout(failsafeTimer);
+    // No GSAP — immediately show everything
+    document.querySelectorAll('[data-reveal],[data-reveal-left],[data-reveal-right],.section-heading').forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+      el.style.visibility = 'visible';
+    });
+    return;
+  }
 
   gsap.registerPlugin(window.ScrollTrigger);
 
@@ -131,14 +152,17 @@ export async function initScrollReveals() {
 
     ScrollTrigger.batch(revealEls, {
       start: 'top 88%',
-      onEnter: batch => gsap.to(batch, {
-        opacity: 1,
-        y: 0,
-        duration: 0.55,
-        ease: 'power2.out',
-        stagger: 0.06,
-        overwrite: true,
-      }),
+      onEnter: batch => {
+        clearTimeout(failsafeTimer); // GSAP is working — cancel the failsafe
+        gsap.to(batch, {
+          opacity: 1,
+          y: 0,
+          duration: 0.55,
+          ease: 'power2.out',
+          stagger: 0.06,
+          overwrite: true,
+        });
+      },
       once: true,
     });
   }
@@ -149,7 +173,10 @@ export async function initScrollReveals() {
     gsap.set(leftEls, { opacity: 0, x: -36, force3D: true });
     ScrollTrigger.batch(leftEls, {
       start: 'top 88%',
-      onEnter: batch => gsap.to(batch, { opacity: 1, x: 0, duration: 0.55, ease: 'power2.out', stagger: 0.07, overwrite: true }),
+      onEnter: batch => {
+        clearTimeout(failsafeTimer);
+        gsap.to(batch, { opacity: 1, x: 0, duration: 0.55, ease: 'power2.out', stagger: 0.07, overwrite: true });
+      },
       once: true,
     });
   }
@@ -159,7 +186,10 @@ export async function initScrollReveals() {
     gsap.set(rightEls, { opacity: 0, x: 36, force3D: true });
     ScrollTrigger.batch(rightEls, {
       start: 'top 88%',
-      onEnter: batch => gsap.to(batch, { opacity: 1, x: 0, duration: 0.55, ease: 'power2.out', stagger: 0.07, overwrite: true }),
+      onEnter: batch => {
+        clearTimeout(failsafeTimer);
+        gsap.to(batch, { opacity: 1, x: 0, duration: 0.55, ease: 'power2.out', stagger: 0.07, overwrite: true });
+      },
       once: true,
     });
   }
@@ -169,4 +199,3 @@ export async function initScrollReveals() {
 
   return { destroy: () => ScrollTrigger.killAll() };
 }
-
